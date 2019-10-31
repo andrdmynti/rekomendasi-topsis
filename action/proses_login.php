@@ -25,16 +25,9 @@
         $_SESSION['pegawai_id'] = $pegawai_id;
         $_SESSION['level']      = $level;
         
-        // if($level=='1'){
-        //     echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/dashboard.php">';
-        // }
-        // else {
-        //     echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=..//dashboard.php">';
-        // }
         // echo "RETURN BERHASIL";
         echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/dashboard.php">';
         // header('Location:../admin/admin.php?content=home-admin');
-        
     }
     else{
         // echo "GAGAL";
