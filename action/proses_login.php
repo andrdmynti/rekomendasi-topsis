@@ -25,7 +25,12 @@
         $_SESSION['pegawai_id'] = $pegawai_id;
         $_SESSION['level']      = $level;
         
-        //var_dump($_SESSION['id']);
+        // if($level=='1'){
+        //     echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/dashboard.php">';
+        // }
+        // else {
+        //     echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=..//dashboard.php">';
+        // }
         // echo "RETURN BERHASIL";
         echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/dashboard.php">';
         // header('Location:../admin/admin.php?content=home-admin');
@@ -33,7 +38,7 @@
     }
     else{
         // echo "GAGAL";
-        // echo "<br><br><br><strong><center><i>Maaf anda gagal login. Mungkin Username atau Password yang anda masukkan salah.<br>Silahkan masukkan Username atau Password dengan benar!";
-        // echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/">';  
+        echo "<br><br><br><strong><center><i>Maaf anda gagal login. Mungkin Username atau Password yang anda masukkan salah.<br>Silahkan masukkan Username atau Password dengan benar!";
+        echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/">';  
     }
 ?>
