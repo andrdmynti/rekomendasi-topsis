@@ -37,6 +37,9 @@
   <link rel="stylesheet" href="template/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="template/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -109,7 +112,28 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- ISI CONTENT     -->
-    asdafasf
+    <?php
+      if ($halaman=='index')
+        include 'beranda.php';
+
+      elseif($halaman=='jenis_kendaraan')
+        include 'j_kendaraan.php';
+      elseif($halaman=='i_jkendaraan')
+        include 'insert_jkendaraan.php';
+      
+
+      elseif($halaman=='kendaraan')
+        include 'kendaraan.php';
+      elseif($halaman=='i_kendaraan')
+        include 'insert_kendaraan.php';
+      
+        
+      elseif($halaman=='pegawai')
+        include 'pegawai.php';
+      elseif($halaman=='i_pegawai')
+        include 'insert_pegawai.php';
+      
+    ?>
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -163,17 +187,30 @@
 <script src="template/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="template/dist/js/demo.js"></script>
+<!-- DataTables -->
+<script src="template/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 </body>
 </html>
 <?php
   }
 
   else {
-    echo "BELUM LOGIN";
+    return redirect('index.php');
   }
-	// $id_admin=session_id();
-	// $id_login= $_SESSION['id'];
-
 
 ?>
 
