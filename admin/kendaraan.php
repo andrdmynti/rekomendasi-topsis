@@ -26,23 +26,38 @@
             <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th>Nama Kendaraan</th>
+                <th>Merk Kendaraan</th>
                 <th>Jenis Kendaraan</th>
                 <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Trident</td>
-                <td>X</td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>C</td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>A</td>
-            </tr>
+                <?php
+                    
+                    include '../action/connection.php';
+
+                    $query = mysqli_query($konek, "SELECT kendaraan.nama, kendaraan.merk, kendaraan.jenis_id, jenis_kendaraan.id, jenis_kendaraan.jenis FROM kendaraan, jenis_kendaraan WHERE jenis_kendaraan.id = kendaraan.id")or die(mysqli_error());
+                    
+                    if(mysqli_num_rows($query) == 0){	
+                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';		
+                    }
+                    else
+                    {	
+                      $no = 1;				
+                      while($data = mysqli_fetch_array($query)){	
+                          echo '<tr>';
+                            echo '<td>'.$no.'</td>';
+                            echo '<td>'.$data['nama'].'</td>';
+                            echo '<td>'.$data['merk'].'</td>';
+                            echo '<td>'.$data['jenis'].'</td>';
+                            echo '<td><a href=dashboard.php?halaman=e_kendaraan&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
+                            echo '<td><a href=../action/d_kendaraan.php?id='.$data['id'].'><span class="glyphicon glyphicon-remove-sign"></span></a></td>';
+                          echo '</tr>';
+                         $no++;	
+                      }
+                    }
+                  ?>
             </tbody>
             </table>
         </div>
