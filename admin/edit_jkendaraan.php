@@ -1,3 +1,14 @@
+<?php
+
+    include '../action/connection.php';
+
+    $id_jk   = $_GET['id'];
+    $edit    = "SELECT id, jenis FROM jenis_kendaraan WHERE id = '$id_jk'";
+    $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+    $data    = mysqli_fetch_array($hasil);
+    var_dump($data['id']);
+
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -27,12 +38,13 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" method="POST" action="../action/i_jkendaraan.php">
+                    <form class="form-horizontal" method="POST" action="../action/e_jkendaraan.php">
+                        <input value="<?php echo $data['id'] ?>" hidden name="id">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Jenis Kendaraan</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="jenis" class="form-control" id="inputEmail3" placeholder="Jenis Kendaraan">
+                                    <input type="text" name="jenis" value="<?php echo $data['jenis'] ?>" class="form-control" id="inputEmail3" placeholder="Jenis Kendaraan">
                                 </div>
                             </div>
                         </div>

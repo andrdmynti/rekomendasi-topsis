@@ -26,23 +26,35 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>No</th>
                   <th>Jenis Kendaraan</th>
-                  <th>Aksi</th>
+                  <th colspan='2'><center>Aksi</center></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>A</td>
-                </tr>
+                  <?php
+                    
+                    include '../action/connection.php';
+
+                    $query = mysqli_query($konek, "SELECT * FROM jenis_kendaraan")or die(mysqli_error());
+                    
+                    if(mysqli_num_rows($query) == 0){	
+                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';		
+                    }
+                    else
+                    {	
+                      $no = 1;				
+                      while($data = mysqli_fetch_array($query)){	
+                          echo '<tr>';
+                        echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['jenis'].'</td>';
+                        echo '<td><a href=dashboard.php?halaman=e_jkendaraan&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
+                        echo '<td><a href=../action/d_jkendaraan.php?id='.$data['id'].'><span class="glyphicon glyphicon-remove-sign"></span></a></td>';
+                        echo '</tr>';
+                        $no++;	
+                      }
+                    }
+                  ?>
                 </tbody>
               </table>
             </div>
