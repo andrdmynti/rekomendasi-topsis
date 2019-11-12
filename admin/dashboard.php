@@ -120,18 +120,24 @@
         include 'j_kendaraan.php';
       elseif($halaman=='i_jkendaraan')
         include 'insert_jkendaraan.php';
+      elseif($halaman=='e_jkendaraan')
+        include 'edit_jkendaraan.php';
       
 
       elseif($halaman=='kendaraan')
         include 'kendaraan.php';
       elseif($halaman=='i_kendaraan')
         include 'insert_kendaraan.php';
-      
+      elseif($halaman=='e_kendaraan')
+        include 'edit_kendaraan.php';
+
         
       elseif($halaman=='pegawai')
         include 'pegawai.php';
       elseif($halaman=='i_pegawai')
         include 'insert_pegawai.php';
+      elseif($halaman=='e_pegawai')
+        include 'edit_pegawai.php';
       
     ?>
   </div>
