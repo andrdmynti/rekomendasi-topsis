@@ -6,8 +6,7 @@
     $edit    = "SELECT id, jenis FROM jenis_kendaraan WHERE id = '$id_jk'";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
     $data    = mysqli_fetch_array($hasil);
-    var_dump($data['id']);
-
+ 
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
