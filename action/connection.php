@@ -1,5 +1,5 @@
 <?php
 
-    $konek = mysqli_connect('localhost','root','sheilaonseven','srpm');
+    $konek = mysqli_connect('localhost','root','','srpm');
     
 ?>

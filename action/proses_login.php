@@ -18,6 +18,7 @@
 	$password   = $data['password'];
     $pegawai_id = $data['pegawai_id'];
     $level	    = $data['level'];
+    $id	        = $data['id'];
     
     if($jlhrecord > 0){
         session_start();
