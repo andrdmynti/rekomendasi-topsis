@@ -2,10 +2,10 @@
 
     include "connection.php";
     
-	$email     = $_POST["email"];
+	$username  = $_POST["username"];
     $password  = md5($_POST["password"]);
 
-    $query     ="SELECT * FROM user WHERE email='$email' AND password='$password'";
+    $query     ="SELECT * FROM user WHERE username='$username' AND password='$password'";
     $login     = mysqli_query($konek, $query) or die (mysqli_error($konek));
     // var_dump($login);
     // $login     = mysqli_query($konek,$query) or die(mysqli_error($konek));
@@ -15,6 +15,7 @@
     // var_dump('$jlhrecord');
 
 	$email      = $data['email'];
+	$username   = $data['username'];
 	$password   = $data['password'];
     $pegawai_id = $data['pegawai_id'];
     $level	    = $data['level'];
@@ -23,6 +24,7 @@
     if($jlhrecord > 0){
         session_start();
         $_SESSION['id']         = $id;
+        $_SESSION['username']   = $username;
         $_SESSION['pegawai_id'] = $pegawai_id;
         $_SESSION['level']      = $level;
         
@@ -34,7 +36,7 @@
     }
     else{
         // echo "GAGAL";
-        // echo "<br><br><br><strong><center><i>Maaf anda gagal login. Mungkin Username atau Password yang anda masukkan salah.<br>Silahkan masukkan Username atau Password dengan benar!";
-        // echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/">';  
+        echo "<br><br><br><strong><center><i>Maaf anda gagal login. Mungkin Username atau Password yang anda masukkan salah.<br>Silahkan masukkan Username atau Password dengan benar!";
+        echo '<META HTTP-EQUIV="REFRESH" CONTENT = "2; URL=../admin/">';  
     }
 ?>

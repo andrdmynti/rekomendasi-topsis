@@ -1,5 +1,10 @@
-<?php
-  
+<?php 
+  session_start();
+  if(isset($_SESSION['username']))
+    {
+      include "../action/connection.php";
+      if(isset($_GET['halaman'])) $halaman = $_GET['halaman']; 
+        else $halaman = "dashboard";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +27,8 @@
   <link rel="stylesheet" href="template/dist/css/skins/_all-skins.min.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="template/bower_components/morris.js/morris.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="template/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="template/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
@@ -96,26 +103,44 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Master Data</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-          </ul>
-        </li>
+        <?php
+            if($_SESSION['level']==1)
+            {
+              echo '
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-edit"></i> <span>Master Data</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                  <ul class="treeview-menu">
+                    <li><a href="dashboard.php?halaman=j_kendaraan"><i class="fa fa-circle-o"></i> Jenis Kendaraan</a></li>
+                    <li><a href="dashboard.php?halaman=kendaraan"><i class="fa fa-circle-o"></i> Kendaraan</a></li>
+                    <li><a href="dashboard.php?halaman=det_kendaraan"><i class="fa fa-circle-o"></i> Detail Kendaraan</a></li>
+                    <li><a href="dashboard.php?halaman=waktu"><i class="fa fa-circle-o"></i> Waktu</a></li>
+                    <li><a href="dashboard.php?halaman=det_harga"><i class="fa fa-circle-o"></i> Detail Harga</a></li>
+                  </ul>
+              </li>
+              <li class="treeview">
+                <a href="dashboard.php?halaman=pemesanan">
+                  <i class="fa fa-cart-plus"></i> <span>Pemesanan</span>
+                  <span class="pull-right-container">
+                  </span>
+                </a>
+              </li>';
+            }
+            else {
+
+            }
+          ?>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -124,7 +149,52 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       <?php
+          //menu navigasi admin
+					if ($halaman=='dashboard')
+            include 'beranda.php';
 
+          elseif ($halaman=='j_kendaraan')
+            include 'j_kendaraan.php';
+          elseif ($halaman=='insert_jkendaraan')
+            include 'i_jkendaraan.php';
+          elseif ($halaman=='update_jkendaraan')
+            include 'e_jkendaraan.php';
+          
+          elseif ($halaman=='kendaraan')
+            include 'kendaraan.php';
+          elseif ($halaman=='insert_kendaraan')
+            include 'i_kendaraan.php';
+          elseif ($halaman=='update_kendaraan')
+            include 'e_kendaraan.php';
+          
+          elseif ($halaman=='det_kendaraan')
+            include 'detail_kendaraan.php';
+          elseif ($halaman=='i_detkendaraan')
+            include 'i_detkendaraan.php';
+          elseif ($halaman=='update_detkendaraan')
+            include 'e_detkendaraan.php';
+
+          elseif ($halaman=='waktu')
+            include 'waktu.php';
+          elseif ($halaman=='insert_waktu')
+            include 'i_waktu.php';
+          elseif ($halaman=='update_waktu')
+            include 'e_waktu.php';
+          
+          elseif ($halaman=='det_harga')
+            include 'detail_harga.php';
+          elseif ($halaman=='i_detharga')
+            include 'i_detharga.php';
+          elseif ($halaman=='update_detharga')
+            include 'e_detharga.php';
+
+          elseif ($halaman=='pemesanan')
+            include 'pemesanan.php';
+          
+          elseif ($halaman=='stok')
+            include 'stok.php';
+
+          
       ?>
   </div>
   <!-- /.content-wrapper -->
@@ -370,5 +440,27 @@
 <script src="template/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="template/dist/js/demo.js"></script>
+<!-- DataTables -->
+<script src="template/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 </body>
 </html>
+<?php
+}
+else {
+  header("location:index.php");
+}
+?>
