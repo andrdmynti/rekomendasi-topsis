@@ -31,12 +31,13 @@
             <div class="box box-primary">
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="../action/i_waktu.php">
+            <form role="form" method="post" action="../action/u_waktu.php">
                 <br><br>
                 <div class="box-body">
+                    <input type="text" name="id" value="<?php echo $row['id'] ?>" hidden>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Lama Peminjaman</label>
-                        <input type="text" class="form-control" name="waktu" id="exampleInputEmail1" placeholder="Waktu Peminjaman">
+                        <input type="text" class="form-control" value="<?php echo $row['lama_peminjaman'] ?>" name="waktu" id="exampleInputEmail1" placeholder="Waktu Peminjaman">
                     </div>
                 </div>
                 <!-- /.box-body -->

@@ -46,7 +46,7 @@
                                         echo '<tr>';
                                     echo '<td>'.$no.'</td>';
                                     echo '<td>'.$data['lama_peminjaman'].'</td>';
-                                    echo '<td><a href=admin.php?halaman=e_waktu&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
+                                    echo '<td><a href=dashboard.php?halaman=e_waktu&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
                                     echo '<td><a href=../config/d_waktu.php?id='.$data['id'].'><span class="glyphicon glyphicon-remove-sign"></span></a></td>';
                                     echo '</tr>';
                                     $no++;	

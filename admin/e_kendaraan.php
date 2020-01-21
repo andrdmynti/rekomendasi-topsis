@@ -6,7 +6,7 @@
 
     $id      = $_GET['id'];
 
-    $edit    = "SELECT j_kendaraan.jenis, j_kendaraan.id, kendaraan.nama, kendaraan.merk, kendaraan.jenis_id FROM kendaraan, j_kendaraan WHERE j_kendaraan.id = kendaraan.jenis_id AND kendaraan.id = $id";
+    $edit    = "SELECT waktu.lama_peminjaman, kendaraan.nama, detail_harga.harga FROM detail_harga,kendaraan,waktu WHERE waktu.id = detail_harga.waktu_id AND kendaraan.id = detail_harga.kendaraan_id AND detail_harga.id = $id";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error($konek));
     $data    = mysqli_fetch_array($hasil);
 

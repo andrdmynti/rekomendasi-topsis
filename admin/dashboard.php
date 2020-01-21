@@ -185,7 +185,7 @@
           elseif ($halaman=='i_detharga')
             include 'i_detharga.php';
           elseif ($halaman=='update_detharga')
-            include 'e_detharga.php';
+            include 'e_dharga.php';
 
           elseif ($halaman=='pemesanan')
             include 'pemesanan.php';
