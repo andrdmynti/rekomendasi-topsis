@@ -163,7 +163,7 @@
             include 'kendaraan.php';
           elseif ($halaman=='insert_kendaraan')
             include 'i_kendaraan.php';
-          elseif ($halaman=='update_kendaraan')
+          elseif ($halaman=='edit_kendaraan')
             include 'e_kendaraan.php';
           
           elseif ($halaman=='det_kendaraan')
@@ -177,7 +177,7 @@
             include 'waktu.php';
           elseif ($halaman=='insert_waktu')
             include 'i_waktu.php';
-          elseif ($halaman=='update_waktu')
+          elseif ($halaman=='e_waktu')
             include 'e_waktu.php';
           
           elseif ($halaman=='det_harga')

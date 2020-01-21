@@ -38,7 +38,7 @@
                         <?php
                             include '../action/connection.php';
 
-                            $query = mysqli_query($konek, "SELECT kendaraan.id, kendaraan.nama, d_kendaraan.kendaraan_id, d_kendaraan.nopol_kendaraan, d_kendaraan.warna_kendaraan, d_kendaraan.tahun_pembuatan, d_kendaraan.daya_listrik FROM kendaraan, d_kendaraan WHERE kendaraan.id = d_kendaraan.kendaraan_id")or die(mysqli_error($konek));
+                            $query = mysqli_query($konek, "SELECT d_kendaraan.id_dk, kendaraan.id, kendaraan.nama, d_kendaraan.kendaraan_id, d_kendaraan.nopol_kendaraan, d_kendaraan.warna_kendaraan, d_kendaraan.tahun_pembuatan, d_kendaraan.daya_listrik FROM kendaraan, d_kendaraan WHERE kendaraan.id = d_kendaraan.kendaraan_id")or die(mysqli_error($konek));
                             
                             if(mysqli_num_rows($query) == 0){	
                                 echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';	
@@ -54,7 +54,7 @@
                                     echo '<td>'.$data['warna_kendaraan'].'</td>';
                                     echo '<td>'.$data['tahun_pembuatan'].'</td>';
                                     echo '<td>'.$data['daya_listrik'].'</td>';
-                                    echo '<td><a href=admin.php?halaman=update_detkendaraan&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
+                                    echo '<td><a href=dashboard.php?halaman=update_detkendaraan&&id='.$data['id'].'><span class="glyphicon glyphicon-edit"></a></td>';
                                     echo '<td><a href=../config/d_detkendaraan.php?id='.$data['id'].'><span class="glyphicon glyphicon-remove-sign"></span></a></td>';
                                     echo '</tr>';
                                     $no++;	
