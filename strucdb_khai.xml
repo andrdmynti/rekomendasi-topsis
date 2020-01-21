@@ -37,7 +37,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="257" y="23" name="user">
+</datatypes><table x="300" y="134" name="user">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -49,38 +49,9 @@
 </row>
 <row name="pegawai_id" null="0" autoincrement="0">
 <datatype>INTEGER(20)</datatype>
-<relation table="pegawai" row="id" />
 </row>
 <row name="level" null="0" autoincrement="0">
 <datatype>INTEGER(2)</datatype>
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="58" y="211" name="pegawai">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="nama_pegawai" null="0" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-</row>
-<row name="jabatan_id" null="0" autoincrement="0">
-<datatype>INTEGER</datatype>
-<relation table="jabatan" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-<key type="INDEX" name="">
-</key>
-</table>
-<table x="801" y="16" name="jabatan">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="nama_jabatan" null="0" autoincrement="0">
-<datatype>VARCHAR</datatype>
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -97,7 +68,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="659" y="110" name="kendaraan">
+<table x="455" y="235" name="kendaraan">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -115,7 +86,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="68" y="367" name="pemesan">
+<table x="230" y="329" name="pemesan">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -131,42 +102,50 @@
 <row name="ktp" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
 </row>
+<row name="foto_ktp" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
 <row name="sim" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
 </row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="253" y="305" name="detail_pesanan">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
+<row name="tgl_awal" null="1" autoincrement="0">
+<datatype>DATE(10)</datatype>
 <default>NULL</default></row>
-<row name="pemesan_id" null="0" autoincrement="0">
-<datatype>INTEGER(20)</datatype>
-<relation table="pemesan" row="id" />
-</row>
-<row name="penumpang" null="0" autoincrement="0">
-<datatype>INTEGER</datatype>
-</row>
-<row name="no_trx" null="0" autoincrement="0">
-<datatype>MEDIUMTEXT(10)</datatype>
-</row>
-<row name="dkendaraan_id" null="0" autoincrement="0">
-<datatype>INTEGER</datatype>
-<relation table="detail_kendaraan" row="id" />
-</row>
-<row name="status" null="0" autoincrement="0">
+<row name="tgl_akhir" null="1" autoincrement="0">
+<datatype>DATE(10)</datatype>
+<default>NULL</default></row>
+<row name="jenis_id" null="1" autoincrement="0">
 <datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="jenis_kendaraan" row="id" />
 </row>
-<row name="bukti_pembayaran" null="1" autoincrement="0">
+<row name="kendaraan_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="kendaraan" row="id" />
+</row>
+<row name="waktu_id" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default><relation table="waktu" row="id" />
+</row>
+<row name="lama_sewa" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="total" null="1" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default>NULL</default></row>
+<row name="status" null="1" autoincrement="0">
+<datatype>INTEGER(10)</datatype>
+<default>NULL</default></row>
+<row name="kode_trx" null="1" autoincrement="0">
 <datatype>VARCHAR(20)</datatype>
-</row>
+<default>NULL</default></row>
+<row name="bukti_trx" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="932" y="405" name="detail_kendaraan">
+<table x="635" y="501" name="detail_kendaraan">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -194,21 +173,6 @@
 <part>id</part>
 </key>
 </table>
-<table x="463" y="208" name="stok_kendaraan">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="kendaraan_id" null="0" autoincrement="0">
-<datatype>INTEGER</datatype>
-<relation table="kendaraan" row="id" />
-</row>
-<row name="stok" null="0" autoincrement="0">
-<datatype>INTEGER(2)</datatype>
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
 <table x="1006" y="220" name="waktu">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
@@ -220,7 +184,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="698" y="256" name="detail_harga">
+<table x="935" y="378" name="detail_harga">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -240,4 +204,3 @@
 </key>
 </table>
 </sql>
-

@@ -12,25 +12,25 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="cform" id="contact-form">
-                    <form action="" method="post" role="form" class="contactForm">
+                    <form action="action/proses_pesan.php" method="post" role="form" class="contactForm">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <input type="text" name="nama" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">No. KTP</label>
-                            <input type="text" class="form-control" name="ktp" id="email" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="text" class="form-control" name="ktp" id="ktp" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Foto KTP</label>
-                            <input type="file" class="form-control" name="ktp" id="email" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="file" class="form-control" name="ktp" id="ktp" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">No. SIM</label>
-                            <input type="text" class="form-control" name="sim" id="email" placeholder="Nomor SIM" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="text" class="form-control" name="sim" id="sim" placeholder="Nomor SIM" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
@@ -45,17 +45,17 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Tanggal Penyewaan Awal</label>
-                            <input type="text" class="form-control" name="awal" id="subject" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" class="form-control" name="awal" id="awal" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Tanggal Penyewaan Akhir</label>
-                            <input type="text" class="form-control" name="akhir" id="subject" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" class="form-control" name="akhir" id="akhir" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Jenis Kendaraan</label>
-                            <select class="form-control" id="jenis" name="jenis_id" required>
+                            <select class="form-control" id="jenis" name="jenis" required>
                                 <?php
                                     include 'action/connection.php';
                                     $option      = "SELECT * FROM j_kendaraan";
@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Kendaraan</label>
-                            <select class="form-control" id="kendaraan" name="kendaraan_id" required>
+                            <select class="form-control" id="kendaraan" name="kendaraan" required>
                                 
                             </select>
                         </div>

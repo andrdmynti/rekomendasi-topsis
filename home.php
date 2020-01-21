@@ -52,7 +52,7 @@
 
               <article class="col-md-4 isotopeItem photography">
                 <div class="portfolio-item">
-                  <img src="img/portfolio/img2.jpg" alt="" />
+                  <img src="template/img/portfolio/img2.jpg" alt="" />
                   <div class="portfolio-desc align-center">
                     <div class="folio-info">
                       <h5><a href="#">Portfolio name</a></h5>
@@ -104,43 +104,40 @@
                   <div class="portfolio-desc align-center">
                     <div class="folio-info">
                       <h5><a href="#">Portfolio name</a></h5>
-                      <a href="img/portfolio/img6.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+                      <a href="template/img/portfolio/img6.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
                     </div>
                   </div>
                 </div>
               </article>
-
               <article class="col-md-4 isotopeItem print">
                 <div class="portfolio-item">
-                  <img src="img/portfolio/img7.jpg" alt="" />
+                  <img src="template/img/portfolio/img7.jpg" alt="" />
                   <div class="portfolio-desc align-center">
                     <div class="folio-info">
                       <h5><a href="#">Portfolio name</a></h5>
-                      <a href="img/portfolio/img7.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+                      <a href="template/img/portfolio/img7.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
                     </div>
                   </div>
                 </div>
               </article>
-
               <article class="col-md-4 isotopeItem photography">
                 <div class="portfolio-item">
-                  <img src="img/portfolio/img8.jpg" alt="" />
+                  <img src="template/img/portfolio/img8.jpg" alt="" />
                   <div class="portfolio-desc align-center">
                     <div class="folio-info">
                       <h5><a href="#">Portfolio name</a></h5>
-                      <a href="img/portfolio/img8.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+                      <a href="template/img/portfolio/img8.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
                     </div>
                   </div>
                 </div>
               </article>
-
               <article class="col-md-4 isotopeItem print">
                 <div class="portfolio-item">
-                  <img src="img/portfolio/img9.jpg" alt="" />
+                  <img src="template/img/portfolio/img9.jpg" alt="" />
                   <div class="portfolio-desc align-center">
                     <div class="folio-info">
                       <h5><a href="#">Portfolio name</a></h5>
-                      <a href="img/portfolio/img9.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+                      <a href="template/img/portfolio/img9.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
                     </div>
                   </div>
                 </div>
@@ -164,7 +161,8 @@
         <div class="col-md-offset-3 col-md-6">
           <div class="section-header">
             <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
-            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.</p>
+            <p>Villa Gading Harapan BD8 No. 29, Babelan, Bahagia, Kec. Babelan, Bekasi, Jawa Barat 17610.</p>
+            <p>0878-0420-9390</p>
           </div>
         </div>
       </div>

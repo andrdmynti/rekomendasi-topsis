@@ -17,7 +17,7 @@
 	$email      = $data['email'];
 	$username   = $data['username'];
 	$password   = $data['password'];
-    $pegawai_id = $data['pegawai_id'];
+    // $pegawai_id = $data['pegawai_id'];
     $level	    = $data['level'];
     $id	        = $data['id'];
     
@@ -25,7 +25,7 @@
         session_start();
         $_SESSION['id']         = $id;
         $_SESSION['username']   = $username;
-        $_SESSION['pegawai_id'] = $pegawai_id;
+        // $_SESSION['pegawai_id'] = $pegawai_id;
         $_SESSION['level']      = $level;
         
         //var_dump($_SESSION['id']);
