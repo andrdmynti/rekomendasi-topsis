@@ -156,7 +156,7 @@
             include 'j_kendaraan.php';
           elseif ($halaman=='insert_jkendaraan')
             include 'i_jkendaraan.php';
-          elseif ($halaman=='update_jkendaraan')
+          elseif ($halaman=='edit_jkendaraan')
             include 'e_jkendaraan.php';
           
           elseif ($halaman=='kendaraan')
