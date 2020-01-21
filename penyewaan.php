@@ -20,17 +20,17 @@
                         </div>
                         <div class="form-group">
                             <label for="email">No. KTP</label>
-                            <input type="text" class="form-control" name="ktp" id="ktp" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="text" class="form-control" name="no_ktp" id="no_ktp" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Foto KTP</label>
-                            <input type="file" class="form-control" name="ktp" id="ktp" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="file" class="form-control" name="fileToUpload" id="fileToUpload" placeholder="Nomor KTP" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">No. SIM</label>
-                            <input type="text" class="form-control" name="sim" id="sim" placeholder="Nomor SIM" data-rule="email" data-msg="Please enter a valid email" />
+                            <input type="text" class="form-control" name="no_sim" id="no_sim" placeholder="Nomor SIM" data-rule="email" data-msg="Please enter a valid email" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
@@ -45,12 +45,12 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Tanggal Penyewaan Awal</label>
-                            <input type="text" class="form-control" name="awal" id="awal" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="date" class="form-control" name="awal" id="awal" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Tanggal Penyewaan Akhir</label>
-                            <input type="text" class="form-control" name="akhir" id="akhir" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="date" class="form-control" name="akhir" id="akhir" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
@@ -94,13 +94,13 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Lama Penyewaan</label>
-                            <input type="text" class="form-control" name="lama" id="lama" placeholder="Nomor Handphone" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                            <div class="validation"></div>
+                            <input type="text" class="form-control" name="lama" id="lama" placeholder="Lama Penyewaan" />
+                            <!-- <div class="validation"></div> -->
                         </div>
                         <div class="form-group">
                             <label for="message">Total Pembayaran</label>
-                            <input type="text" class="form-control" name="total" id="total" placeholder="Total Pembayaran" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" readonly/>
-                            <div class="validation"></div>
+                            <input type="text" class="form-control" name="total" id="total" placeholder="Total Pembayaran" readonly/>
+                            <!-- <div class="validation"></div> -->
                         </div>
                         <button type="submit" class="btn btn-theme pull-left">SUBMIT</button>
                     </form>
@@ -131,7 +131,7 @@
         var waktu = $("#waktu").val();
         console.log(waktu);
     });
-
+    
     $( "#lama" ).change(function() {
         var kendaraan = $("#kendaraan").val();
         var waktu = $("#waktu").val();

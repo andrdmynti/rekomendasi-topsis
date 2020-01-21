@@ -11,6 +11,7 @@
 
 	$total = $row["harga"] * $lama;
 
+	// echo $total=$row['harga'];
 	echo $total;
 	
 ?>
